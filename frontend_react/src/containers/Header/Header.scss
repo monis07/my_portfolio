@@ -3,6 +3,7 @@
 }
 
 .app__header{
+  width:100%;
   display:flex;
   flex-direction: column;
   background-image: url(../../assets/bgWhite.png);
@@ -86,8 +87,8 @@
   }
   div:nth-child(3){
     img{
-      width:100px;
-    height:100px;
+      width:70px;
+    height:70px;
     }
   }
 
