@@ -1,17 +1,17 @@
 // //Here we will connect our sanity to our react application
-// import { SanityClient } from "@sanity/client";
-// import { ImageUrlBuilder } from "@sanity/image-url";
+import {createClient} from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 
-// export const client=new SanityClient({
-//     projectId:process.env.REACT_APP_SANITY_PROJECT_ID,
-//     dataset:'production',
-//     apiVersion:'2022-02-01',
-//     useCdn:true,
-//     token:process.env.REACT_APP_SANITY_TOKEN,
-// });
+export const client=createClient({
+    projectId:'6jbrj0b4',
+    dataset:'production',
+    useCdn:true,
+    apiVersion:'2024-03-11',
+    token:process.env.SANITY_SECRET_TOKEN
+});
 
-// const builder= ImageUrlBuilder(client);
 
-// export const urlFor=(source)=>{
-//     return builder.image(source);
-// }
+const builder= imageUrlBuilder(client);
+
+export const urlFor=(source)=>builder.image(source);
+
