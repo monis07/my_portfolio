@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {About, Footer, Header, Skills, Testimonial, Work} from './containers'
 import { Navbar } from './components'
 
