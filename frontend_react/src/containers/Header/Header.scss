@@ -5,7 +5,12 @@
        top:50%;
        bottom:50%;
        margin:1rem;
+
+       @media screen and (max-width:500px){
+        display:none;
+       }
     }
+
     .app__wrapper{
         .copyright{
             display:none;
@@ -40,9 +45,16 @@
     flex:1;
 
     @media screen and(max-width:1200px){
-        justify-content: flex-start;
+    justify-content: flex-start;
     align-items: flex-start;
+    margin-left:7rem;
     }
+
+    @media screen and (max-width: 500px){
+        margin-left:3rem;
+    }
+
+    
     
 }
 
@@ -83,27 +95,62 @@
     flex-direction: column;
     justify-content: center;
     align-items:flex-start;
+
+    @media screen and (max-width:1200px){
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    @media screen and (max-width: 600px){
+        padding:0.1rem;
+        display:flex;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+
+    }
     div{
         border-radius: 50%;
         background-color: white;
         padding:1rem;
         margin:3rem;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+        @media screen and (max-width:600px){
+            padding:0.3rem;
+            margin:1rem;
+        }
     }
 
     div:nth-child(1){
         width:100px;
         height:100px;
         margin-left:0rem;
+
+        @media screen and (max-width:600px){
+            width:70px;
+            height:70px;
+        }
     }
     div:nth-child(2){
         width:150px;
         height:150px;
+
+        @media screen and (max-width:600px){
+            width:120px;
+            height:120px;
+        }
     }
     div:nth-child(3){
         width:70px;
         height:70px;
         margin-left:1rem;
+
+        @media screen and (max-width:600px){
+            width:40px;
+            height:40px;
+            margin-left:1rem;
+            
+        }
     }
 
     img{
@@ -120,6 +167,18 @@
     height: 100vh;
     margin-left:1.5rem;
     position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-left:0;
+    padding:1rem;
+
+    @media screen and (max-width: 1200px){
+        height:100%;
+    }
+
+    @media screen and (max-width:600px){
+        
+    }   
   
     img {
     display:flex;
@@ -129,6 +188,16 @@
       height:100vh;
       object-fit: contain;
       z-index: 1;
+
+      @media screen and (max-width:1200px) {
+        width:566px;
+        height:710px;
+      }
+
+      @media screen and (max-width:600px) {
+        display: flex;
+        flex:0;        
+      }
     }
   
     .app__header-profile-circle {
