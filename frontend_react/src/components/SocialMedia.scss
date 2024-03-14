@@ -1,20 +1,22 @@
 .app__socials{
-    display:flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    .social{
+        margin-bottom: 1rem;
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+        background-color: white;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color:var(--grey-color);
+        border:1px solid var(--grey-color);
 
-}
-
-.social{
-    margin:0.4rem;
-    padding: 0.3rem;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
-    border-radius: 50%;
-    color:black;
-    &:hover{
-        background-color: '#313BAC';
-        cursor: pointer;
+        &:hover{
+            background-color: var(--secondary-color);
+            color:white;
+            transition-duration: 0.5s;
+            transition-behavior:ease-out;
+        }
     }
 }
-

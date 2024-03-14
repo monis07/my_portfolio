@@ -1,76 +1,63 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import {AppWrap} from '../../Wrapper';
-import { images } from '../../constants';
-import './Header.scss';
+import React from 'react'
+import './Header.scss'
+import { AppWrap } from '../../Wrapper'
+import { motion } from 'framer-motion'
+import {images} from '../../constants'
 
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 1,
-      ease: 'easeInOut',
-    },
-  },
-};
-
-const Header = () => (
-  <div className="app__header">
-
-    <motion.div
-      whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-      transition={{ duration: 0.5 }}
-      className="intro"
-    >
-        <div className="intro1">
-          <div className='emoji'>👋</div>
+const Header = () => {
+  return (
+    <div className='app__header app__flex'>
+      <motion.div
+      whileInView={{x:[-100,0], opacity:[0,1]}}
+      transition={{duration:0.85}}
+      className='app__header-intro'
+      >
+        <div className='app__header-name'>
+          <span>👋</span>
           <div>
-            <p>Hello, I am</p>
-            <h1>Monis Azeem</h1>
-          </div>  
-        </div>
-
-        <div className="intro2">
-          <p>Full Stack Developer</p>
-        </div>
-    </motion.div>
-
-
-
-
-    <motion.div
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 0.5, delayChildren: 0.5 }}
-      className="header-images"
-    >
-      <img src={images.profile} alt="profile_bg" />
-      <motion.img
-        whileInView={{ scale: [0, 1] }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        src={images.circle}
-        alt="profile_circle"
-        className="overlay_circle"
-      />
-    </motion.div>
-
-
-
-
-    <motion.div
-      variants={scaleVariants}
-      whileInView={scaleVariants.whileInView}
-      className="header-skills"
-    >
-      {[images.javascript, images.react, images.sass].map((circle, index) => (
-        <div className="all-circles" key={`circle-${index}`}>
-          <img src={circle} alt="profile_bg" />
+          <p className='p-text'>Hello, I am</p>
+          <h1 className='head-text'>Monis</h1>
           </div>
-      ))}
-    </motion.div>
+        </div>
+        <div className='app__header-post'>
+          <p className='p-text'>FULL STACK DEVELOPER</p>
+        </div>
+      </motion.div>
 
+      <motion.div
+      whileInView={{opacity:[0,1]}}
+      transition={{duration:0.5, delayChildren:0.5}}
+      className='app__header-profile'
+      >
+        <img src={images.profile} alt="profile-pic" />
+        <motion.img
+        whileInView={{scale:[0,1]}}
+        transition={{duration:1, ease:'easeInOut'}}
+        src={images.circle}
+        alt="profile-circle"
+        className='app__header-profile-circle'
+        >
+        </motion.img>
 
-  </div>
-);
+      </motion.div>
+      <motion.div
+      whileInView={{scale:[0,1]}}
+      transition={{duration:1, ease:'easeInOut'}}
+      className='app__header-skills'
+      >
+        <div className='app__header-skill'>
+          <img src={images.react} alt="react" />
+        </div>
+        <div className='app__header-skill'>
+          <img src={images.node} alt="node"/>
+        </div>
+        <div className='app__header-skill'>
+          <img src={images.sass} alt="sass"/>
+        </div>
+        
+      </motion.div>
+    </div>
+  )
+}
 
 export default AppWrap(Header,'home');
