@@ -1,53 +1,47 @@
-import {React,useState,useEffect} from 'react';
-import './About.scss';
-import {motion} from 'framer-motion';
-import {images} from '../../constants';
-import {client} from '../../client';
-import {AppWrap,MotionWrap} from '../../Wrapper';
-
+import React, { useEffect, useState} from 'react'
+import { AppWrap,MotionWrap} from '../../Wrapper'
+import './About.scss'
+import { motion } from 'framer-motion'
+import {urlFor,client} from '../../client';
 
 const About = () => {
+  const [about,setAbout]=useState([]);
 
-  const abouts=[
-    {title:'Full Stack development',description:'I am a web developer with experience in building web applications using JavaScript, React, Node.js, and other modern technologies.',imgUrl:images.about01},
-    {title:'Frontend Development',description:'I have a passion for building beautiful and functional websites',imgUrl:images.about02},
-    {title:'BackEnd Developer',description:'I code backend in modern technologies like Express.js and MongoDB',imgUrl:images.about03},
-    {title:'Web Animations',description:'I like to code animations that give aesthetic look to websites',imgUrl:images.about04}
-  ]
-  
+  useEffect(() => {
+    const query='*[_type == "abouts"]';
+
+    client.fetch(query).then((res)=>{
+      setAbout(res);
+    })
+  },[]);
+
+
   return (
     <div className='app__about'>
-      <h1 className='head-text'>
-      I know that
-      <span> Good Design</span>
-      <br/>
-       means
-      <span> Good Business</span>
-    </h1>
+      <h2 className='app__about-head-text'>
+        I Know That <span>Good Design</span> Means <span><br/>Good Business</span>
+      </h2>
 
-
-    <div className='app__profiles'>
-        {abouts.map((about,index) => (
+      <div className='app__about-all'>
+        {about.map((item,index)=>(
           <motion.div
+          whileHover={{ scale: 1.1 }}
           whileInView={{opacity:1}}
-          whileHover={{scale:1.1}}
-          transition={{duration:0.5,type:'tween'}}
-          className='app__profile-item'
-          key={about.title+index}
+          transition={{ duration: 0.5 ,type:'tween'}}
           >
-            <img src={about.imgUrl} alt={about.title}/>
-            <h2 className='bold-text' style={{marginTop:20}}>{about.title}</h2>
-            <p className='p-text' style={{marginTop:20}}>{about.description}</p>
+            <div className='app__about-item'>
+              <div className='app__about-item-img'>
+              <img src={urlFor(item.imgUrl)} alt={item.title} />
+              </div>
+              <h4 className='app__about-title'>{item.title}</h4>
+              <p className='p-text'>{item.description}</p>
+            </div>
+              
           </motion.div>
-      ))}
+        ))}
+      </div>
     </div>
-    </div>
-    
   )
 }
 
-export default AppWrap(
-  MotionWrap(About,'app__about'),
-  'about',
-  "app__whitebg"
-);
+export default AppWrap(MotionWrap(About,'app__about'),'about');

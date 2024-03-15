@@ -2,11 +2,12 @@
     display: flex;
     flex:1;
     flex-direction: row;
-    .app__wrapper-socialmedia,.app__wrapper-navigationdots{
+    .app__wrapper-navigationdots{
         position: absolute;
     }
 
     .app__wrapper-socialmedia{
+        position: absolute;
         left:0;
         bottom:0;
         margin-left:1rem;

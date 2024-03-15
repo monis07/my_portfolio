@@ -1,37 +1,99 @@
-.head-text{
+#about{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    background-color:white;
+    padding-bottom:8rem;
+
+    .app__wrapper-socialmedia,.app__wrapper-navigationdots{
+        position:absolute; 
+    }
+
+    .app__wrapper-socialmedia{
+        @media screen and (max-width:650px){
+            display:none;
+        }
+    }
+
+    .app__wrapper-navigationdots{
+        margin:1rem;
+    }
+
+
+    .copyright{
+        font-family: var(--font-base);
+        font-size: 0.8rem;
+        position:absolute;
+        bottom:0;
+        right:0;
+        margin: 0.5rem;
+        margin-right:3rem;
+        margin-bottom: 3rem;
+    }
+    
+}
+
+
+
+
+.app__about-head-text{
+    font-size:2.8rem;
     text-align: center;
-    margin:2rem;
+    margin-top:3.5rem;
+    margin-bottom:2rem;
+
     span{
         color:var(--secondary-color);
     }
 }
 
 .app__about{
-    flex:1;
     width:100%;
+    font-family: var(--font-base);
+    display:flex;
     flex-direction: column;
-}
-
-.app__profiles{
-    display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+    align-items: center;
 
-    .app__profile-item{
-        width:190px;
+    .app__about-all{
         display:flex;
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: center;
         align-items: flex-start;
-        flex-direction: column;
-        margin:2rem;
-    }
-    img{
-        width:100%;
-        height:170px;
-        border-radius:15px;
-        object-fit: cover;
+        flex-wrap: wrap;
+
+        .app__about-item{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width:190px;
+            margin:2rem;
+
+            .app__about-item-img{
+                width:190px;
+                height:170px;
+            }
+            img{
+                width:100%;
+                height:100%;
+                object-fit: cover;
+                border-radius: 10%;
+            }
+
+            h4{
+                margin-top:1.5rem;
+
+            }
+
+            p{
+                color:var(--grey-color);
+                font-size: 0.8rem;
+                font-weight: 450;
+                margin-top:1rem;
+            }
+        }
     }
 }
-
