@@ -107,6 +107,10 @@
    border-radius:10px;
    position: relative;
 
+   &:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
+
    .app__work-item-img{
     height: 230px;
     position:relative;
