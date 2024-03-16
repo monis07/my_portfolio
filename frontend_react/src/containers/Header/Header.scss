@@ -6,7 +6,7 @@
        bottom:50%;
        margin:1rem;
 
-       @media screen and (max-width:500px){
+       @media screen and (max-width:900px){
         display:none;
        }
     }
@@ -16,6 +16,8 @@
         left:0;
         bottom:0;
         margin:1rem;
+
+        
     }
 
     .app__wrapper{
