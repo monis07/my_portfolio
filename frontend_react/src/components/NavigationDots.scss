@@ -1,5 +1,9 @@
 .app__navigationDots{
     flex-direction: column;
+
+    @media screen and (max-width:750px){
+        display: none;
+    }
     a{
         width:10px;
         height: 10px;
