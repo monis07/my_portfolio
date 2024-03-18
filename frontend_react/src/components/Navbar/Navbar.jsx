@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const links=['home', 'about', 'work', 'skills', 'contact'];
+  const links=['home', 'about', 'work', 'skills', 'testimonials','contact'];
   const [toggle,setToggle]=React.useState(false);
   return (
     <div className='app__navbar app__flex'>
@@ -24,8 +24,8 @@ const Navbar = () => {
         <HiMenuAlt4 onClick={()=>setToggle(true)}/>
         {toggle && (
         <motion.div
-        whileInView={{x:[300,0]}}
-        transition={{duration:1, ease:'easeOut'}}
+        whileInView={{x:[50,0]}}
+        transition={{duration:0.5, ease:'easeInOut'}}
         className='app__navbar-menu-toggle app__flex'
         >
           

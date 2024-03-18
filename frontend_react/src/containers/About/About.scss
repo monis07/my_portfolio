@@ -31,6 +31,12 @@
         margin: 0.5rem;
         margin-right:3rem;
         margin-bottom: 3rem;
+
+        @media screen and (max-width:450px){
+            font-size:0.5rem;
+            margin-right:2rem;
+            margin-bottom:1.5rem;
+        }
     }
     
 }
@@ -46,6 +52,11 @@
 
     span{
         color:var(--secondary-color);
+    }
+
+    @media screen and (max-width:450px){
+        font-size:2rem;
+        margin:3.5rem;
     }
 }
 

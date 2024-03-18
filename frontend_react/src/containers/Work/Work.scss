@@ -30,7 +30,15 @@
         margin: 0.5rem;
         margin-right:3rem;
         margin-bottom: 3rem;
+
+        @media screen and (max-width:450px){
+            font-size:0.5rem;
+            margin-right:2rem;
+            margin-bottom:1.5rem;
+        }
     }
+
+    
     
 }
 
@@ -125,6 +133,11 @@
     .app__work-img-hover{
         position:absolute;
         opacity:0;
+
+        @media screen and (max-width:768px){
+            opacity:1;
+            
+        }
         background-color: rgba(0,0,0,0.5);
         transition: all 0.5s ease;
         top:0;

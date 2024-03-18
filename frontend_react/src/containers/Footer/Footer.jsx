@@ -3,6 +3,7 @@ import './Footer.scss';
 import {useState} from 'react';
 import {client} from '../../client';
 import {images} from '../../constants';
+import { AppWrap,MotionWrap} from '../../Wrapper'
 
 const Footer = () => {
 
@@ -65,4 +66,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default AppWrap(MotionWrap(Footer,'app__footer'),'contact');
