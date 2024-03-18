@@ -14,9 +14,9 @@ const SocialMedia = () => {
         <a href="https://github.com/monis07" target="_blank"><div className='social'><FaGithub/></div></a>
         <a href="https://www.linkedin.com/in/monisazeem/" target="_blank"><div className='social'><FaLinkedin/></div></a>
         <a href="https://twitter.com/MonisAzeem" target="_blank"><div className='social'><BsTwitter/></div></a>
-        <a href="https://leetcode.com/monisazeem/" target="_blank"><div className='social'><SiLeetcode/></div></a>
+        {/* <a href="https://leetcode.com/monisazeem/" target="_blank"><div className='social'><SiLeetcode/></div></a>
         <a href="https://www.codingninjas.com/studio/profile/monis07" target="_blank"><div className='social'><SiCodingninjas/></div></a>
-        <a href="https://monisazeem.hashnode.dev/" target="_blank"><div className='social'><SiHashnode/></div></a>
+        <a href="https://monisazeem.hashnode.dev/" target="_blank"><div className='social'><SiHashnode/></div></a> */}
     </div>
   )
 }
